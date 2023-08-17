@@ -21,7 +21,7 @@ components:
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:Header Background', bold: false, underline: false}
-    name: text_box_1
+    name: url
     layout_properties: {grid_position: 'GBOISK,ODMNLH'}
   - type: Label
     properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
@@ -31,11 +31,11 @@ components:
     name: label_2
     layout_properties: {grid_position: 'GBOISK,ZXENJK'}
   - type: TextBox
-    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: color of cat,
+    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: color of pet,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:Header Background', bold: false, underline: false}
-    name: text_box_2
+    name: color
     layout_properties: {grid_position: 'GBOISK,UMEEXA'}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,

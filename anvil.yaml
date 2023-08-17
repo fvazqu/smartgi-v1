@@ -2,6 +2,7 @@ allow_embedding: false
 package_name: SmartGi_v1
 name: SmartGi_v1
 startup_form: Form1
+uplink_visible: true
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
 metadata: {title: SmartGi, description: WebFront for image classification}
