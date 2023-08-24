@@ -1,11 +1,20 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#ecfefc'}
 components:
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: Cat Image Detector, font_size: 24, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'AYAFYS,FMRCON'}
 - type: ColumnPanel
   properties: {role: card, tooltip: '', border: thin solid, foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: ''}
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"GLTPOL":45,"QSUAGG":5}',
+    spacing_below: small, background: '#bcf5f4'}
   name: card_1
   layout_properties: {grid_position: 'STNVGG,REHTYU'}
   components:
@@ -23,33 +32,62 @@ components:
       background: 'theme:Header Background', bold: false, underline: false}
     name: url
     layout_properties: {grid_position: 'GBOISK,ODMNLH'}
-  - type: Label
-    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Color:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties: {grid_position: 'GBOISK,ZXENJK'}
-  - type: TextBox
-    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: color of pet,
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: 'theme:Header Background', bold: false, underline: false}
-    name: color
-    layout_properties: {grid_position: 'GBOISK,UMEEXA'}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Categorize, font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
+      foreground: '', visible: true, text: Detect, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: categorize_button
-    layout_properties: {grid_position: 'SNXQEO,DXSRRE'}
+    layout_properties: {grid_position: 'GBOISK,UDLJVT'}
     event_bindings: {click: categorize_button_click}
+  - type: Image
+    properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+      foreground: '', visible: false, display_mode: shrink_to_fit, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties: {grid_position: 'RINLPU,RUOXGS'}
+    event_bindings: {show: image_1_show}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: false, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: ''}
     name: species_label
     layout_properties: {grid_position: 'RINLPU,QOXXBK'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: '', font_size: null, font: '', spacing_above: small, icon_align: top,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: chatlabel
+    layout_properties: {grid_position: 'EOZXOO,MESNFA'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Ask more about cats,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: chat_input
+    layout_properties: {grid_position: 'CHMRBU,GLTPOL'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: false, text: '>', font_size: null, font: '', spacing_above: small,
+      icon_align: right, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: chatbutton
+    layout_properties: {grid_position: 'CHMRBU,QSUAGG'}
+    event_bindings: {click: chatbutton_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: chat_output_label
+    layout_properties: {grid_position: 'GOZFJS,KUMICQ'}
+- type: Image
+  properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+    foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+    source: 'https://imgs.search.brave.com/gYqBirs2ZUr0lrcEWaVdcfQ5S5Ad96gd5n7ObZ-I1wU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jbGlw/YXJ0LWxpYnJhcnku/Y29tL2ltYWdlcy9x/Y0JYNWpiYzUuanBn',
+    spacing_below: small, background: '', horizontal_align: center}
+  name: image_2
+  layout_properties: {grid_position: 'IFHYYY,LMTAXJ'}
 is_package: true
