@@ -54,6 +54,13 @@ components:
       icon: ''}
     name: species_label
     layout_properties: {grid_position: 'RINLPU,QOXXBK'}
+  - type: Image
+    properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+      foreground: '', visible: false, display_mode: shrink_to_fit, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_3
+    layout_properties: {grid_position: 'NDNQLT,PITPBA'}
+    event_bindings: {show: image_3_show}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: false, text: '', font_size: null, font: '', spacing_above: small, icon_align: top,

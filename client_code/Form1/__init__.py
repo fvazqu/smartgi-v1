@@ -15,6 +15,7 @@ class Form1(Form1Template):
                                     self.url.text)
 
     if pet_category:
+      # self.image_3.source=?
       self.image_1.source = self.url.text
       self.image_1.visible=True
       self.species_label.visible = True
@@ -35,6 +36,8 @@ class Form1(Form1Template):
     self.chat_output_label.text = chat_output
       
     pass
+
+
 
 
 
