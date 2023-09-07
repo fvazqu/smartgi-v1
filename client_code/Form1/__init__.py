@@ -32,7 +32,7 @@ class Form1(Form1Template):
     get_image = anvil.server.call('yolo_image',
                                     self.url.text)
     if get_image:
-      self.image_3.source=get_image
+      self.image_3.source=returned_media_object
       self.image_3.visible=True
     
       
