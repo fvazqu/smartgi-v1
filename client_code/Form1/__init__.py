@@ -29,7 +29,7 @@ class Form1(Form1Template):
       self.chat_input.visible=True
       self.chatbutton.visible=True
       
-    get_image = anvil.server.call('yolo_image',
+    get_image = anvil.server.call('upload_image_to_anvil',
                                     self.url.text)
     if get_image:
       self.image_3.source=returned_media_object
