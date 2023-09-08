@@ -12,14 +12,14 @@ class Form1(Form1Template):
 
   def categorize_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pet_category = anvil.server.call('predict_pet',
+    pet_class = anvil.server.call('predict_pet',
                                     self.url.text)
 
-    if pet_category:
+    if pet_class:
       self.image_1.source = self.url.text
       self.image_1.visible=True
       self.species_label.visible = True
-      self.species_label.text = pet_category.capitalize()
+      self.species_label.text = pet_class.capitalize()
       self.chatlabel.text = "ChatGPT: Ask me more if you have any questions?"
       # if pet_category == "Cat":
       #   self.chatlabel.text = "ChatCat: Cats are domesticated carnivorous mammals known for their playful behavior, independent nature, and strong bond with humans throughout history. Ask me more if you have more questions!"
@@ -28,12 +28,13 @@ class Form1(Form1Template):
       self.chatlabel.visible=True
       self.chat_input.visible=True
       self.chatbutton.visible=True
-      
-    get_image = anvil.server.call('upload_image_to_anvil',
+      self.image_3.visible=True
+
+    get_image = anvil.server.call('yolo_image',
                                     self.url.text)
     if get_image:
-      self.image_3.source=returned_media_object
-      self.image_3.visible=True
+      self.image_3.source=get_image
+    #   self.image_3.visible=True
     
       
   def chatbutton_click(self, **event_args):
